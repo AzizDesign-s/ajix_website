@@ -1,12 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { HeroBackground } from "@/components/sections/hero-background";
+import { HeroBackground } from "@/components/sections/hero/hero-background";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Container } from "@/components/layout/container";
 import { ScrollIndicator } from "@/components/ui/scroll-indicator";
-import { HeroVisual } from "@/components/sections/hero-visual";
+import { HeroVisual } from "@/components/sections/hero/hero-visual";
 import { fadeUp, staggerContainer } from "@/lib/motion";
 
 export function Hero() {
@@ -15,7 +15,7 @@ export function Hero() {
       {/* Ambient background aura */}
       <div
         aria-hidden="true"
-        className="gradient-brand pointer-events-none absolute top-0 left-1/2 h-[600px] w-[900px] -translate-x-1/2 rounded-full opacity-[0.08] blur-[140px]"
+        className="gradient-brand pointer-events-none absolute top-0 left-1/2 h-150 w-225 -translate-x-1/2 rounded-full opacity-[0.08] blur-[140px]"
       />
       <HeroBackground />
 

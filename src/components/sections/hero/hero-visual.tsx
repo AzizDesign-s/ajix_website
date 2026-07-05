@@ -26,20 +26,20 @@ export function HeroVisual() {
   return (
     <div
       ref={containerRef}
-      className="relative flex h-[480px] w-full max-w-2xl items-center justify-center"
+      className="relative flex h-120 w-full max-w-2xl items-center justify-center"
     >
       {/* Outer glow */}
       <motion.div
         style={{ scale: orbScale, opacity: orbOpacity }}
         aria-hidden="true"
-        className="gradient-brand absolute h-[280px] w-[280px] rounded-full blur-[70px]"
+        className="gradient-brand absolute h-70 w-70 rounded-full opacity-35 blur-[70px]"
       />
 
       {/* Rotating ring - outer */}
       <motion.div
         style={{ rotate: ring1Rotate }}
         aria-hidden="true"
-        className="border-accent/25 absolute h-[400px] w-[400px] rounded-full border"
+        className="border-accent/25 absolute h-100 w-100 rounded-full border"
       >
         <span className="bg-accent absolute -top-1 left-1/2 h-2 w-2 -translate-x-1/2 rounded-full shadow-[0_0_12px_2px_var(--color-brand-cyan)]" />
       </motion.div>
@@ -48,7 +48,7 @@ export function HeroVisual() {
       <motion.div
         style={{ rotate: ring2Rotate }}
         aria-hidden="true"
-        className="border-primary/30 absolute h-[320px] w-[320px] rounded-full border border-dashed"
+        className="border-primary/30 absolute h-80 w-80 rounded-full border border-dashed"
       >
         <span className="bg-primary absolute top-1/2 -right-1 h-1.5 w-1.5 -translate-y-1/2 rounded-full shadow-[0_0_10px_2px_var(--color-brand-blue)]" />
       </motion.div>
@@ -88,7 +88,7 @@ export function HeroVisual() {
           </p>
           <p className="text-muted-foreground text-xs">Years Experience</p>
         </div>
-        <div className="from-border h-px w-16 bg-gradient-to-r to-transparent lg:w-24" />
+        <div className="from-border h-px w-16 bg-linear-to-r to-transparent lg:w-24" />
       </motion.div>
 
       {/* Right metric chip - connected to orb */}
@@ -99,7 +99,7 @@ export function HeroVisual() {
         transition={{ duration: 0.7, delay: 0.75 }}
         className="absolute top-1/2 right-0 hidden -translate-y-1/2 items-center gap-0 md:flex lg:right-6"
       >
-        <div className="from-border h-px w-16 bg-gradient-to-l to-transparent lg:w-24" />
+        <div className="from-border h-px w-16 bg-linear-to-l to-transparent lg:w-24" />
         <div className="border-border/60 bg-card/90 rounded-xl border px-4 py-3 shadow-lg backdrop-blur-md">
           <p className="font-display gradient-brand-text text-xl font-semibold">
             10+

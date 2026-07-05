@@ -24,7 +24,7 @@ const ibmPlexArabic = IBM_Plex_Sans_Arabic({
 });
 
 export const metadata: Metadata = {
-  title: "AJIX — Enterprise Product Designer",
+  title: "Abdul Aziz — Enterprise Product Designer",
   description:
     "Abdul Aziz (AJIX) — Enterprise Product Designer specializing in research-driven, accessible, scalable digital products.",
 };

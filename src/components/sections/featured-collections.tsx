@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { SectionHeader } from "@/components/layout/section-header";
-import { CollectionCard } from "@/components/sections/collection-card";
+import { CollectionCard } from "@/components/sections/featured-work/collection-card";
 import { collections } from "@/config/collections";
 import { staggerContainer, fadeUp } from "@/lib/motion";
 

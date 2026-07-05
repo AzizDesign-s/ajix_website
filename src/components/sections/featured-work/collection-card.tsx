@@ -55,13 +55,13 @@ export function CollectionCard({
         {/* Top edge highlight - like light catching a glass rim */}
         <div
           aria-hidden="true"
-          className="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"
+          className="absolute inset-x-4 top-0 h-px bg-linear-to-r from-transparent via-white/40 to-transparent"
         />
 
         {/* Category gradient wash on hover */}
         <div
           className={cn(
-            "absolute inset-0 bg-gradient-to-br opacity-0 transition-opacity duration-500 group-hover:opacity-100",
+            "absolute inset-0 bg-linear-to-br opacity-0 transition-opacity duration-500 group-hover:opacity-100",
             collection.gradient
           )}
           aria-hidden="true"

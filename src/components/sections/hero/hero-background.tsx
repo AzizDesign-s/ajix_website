@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
-import { HeroDotGrid } from "@/components/sections/hero-dot-grid";
+import { HeroDotGrid } from "@/components/sections/hero/hero-dot-grid";
 
 export function HeroBackground() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -45,7 +45,7 @@ export function HeroBackground() {
       <motion.div
         animate={{ x: [0, 40, -20, 0], y: [0, -20, 20, 0] }}
         transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -top-32 -left-32 h-[500px] w-[500px] rounded-full blur-[130px]"
+        className="absolute -top-32 -left-32 h-125 w-125 rounded-full blur-[130px]"
         style={{ background: "var(--color-brand-cyan)", opacity: 0.15 }}
       />
 
@@ -58,7 +58,7 @@ export function HeroBackground() {
           ease: "easeInOut",
           delay: 2,
         }}
-        className="absolute -top-20 -right-32 h-[550px] w-[550px] rounded-full blur-[140px]"
+        className="absolute -top-20 -right-32 h-137.5 w-137.5 rounded-full blur-[140px]"
         style={{ background: "var(--color-brand-indigo)", opacity: 0.15 }}
       />
 
@@ -70,13 +70,13 @@ export function HeroBackground() {
           translateX: "-50%",
           translateY: "-50%",
         }}
-        className="absolute h-[550px] w-[550px] rounded-full blur-[110px]"
+        className="absolute h-137.5 w-137.5 rounded-full blur-[110px]"
       >
         <div className="gradient-brand h-full w-full rounded-full opacity-[0.12]" />
       </motion.div>
 
       {/* Center ambient glow behind headline */}
-      <div className="gradient-brand absolute top-0 left-1/2 h-[500px] w-[800px] -translate-x-1/2 rounded-full opacity-[0.06] blur-[150px]" />
+      <div className="gradient-brand absolute top-0 left-1/2 h-125 w-200 -translate-x-1/2 rounded-full opacity-[0.06] blur-[150px]" />
 
       {/* Vignette to focus attention center */}
       <div
