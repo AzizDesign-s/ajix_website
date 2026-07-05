@@ -2,7 +2,7 @@ import type { ButtonHTMLAttributes, ReactNode } from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cn } from "@/lib/utils";
 
-type ButtonVariant = "primary" | "secondary" | "ghost";
+type ButtonVariant = "primary" | "secondary" | "ghost" | "gradient";
 type ButtonSize = "sm" | "md" | "lg";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -17,6 +17,8 @@ const variantStyles: Record<ButtonVariant, string> = {
   secondary:
     "bg-surface text-foreground border border-border hover:bg-surface-hover hover:border-border-hover",
   ghost: "bg-transparent text-foreground hover:bg-surface",
+  gradient:
+    "gradient-brand text-white shadow-[0_0_30px_-8px_var(--color-brand-blue)] hover:shadow-[0_0_40px_-6px_var(--color-brand-blue)] hover:brightness-110",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
