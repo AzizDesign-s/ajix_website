@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
-import { HeroDotGrid } from "@/components/sections/hero/hero-dot-grid";
+import { HeroDotGrid } from "@/components/sections/home/hero/hero-dot-grid";
 
 export function HeroBackground() {
   const containerRef = useRef<HTMLDivElement>(null);

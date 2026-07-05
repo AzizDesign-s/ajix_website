@@ -58,7 +58,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
           >
             <div className="flex items-center justify-between">
               <Image
-                src="/ajix-full-dark.svg"
+                src="/logo/ajix-full-dark.svg"
                 alt="AJIX logo mark"
                 width={64}
                 height={40}

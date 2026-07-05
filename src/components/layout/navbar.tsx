@@ -23,7 +23,7 @@ export function Navbar() {
         >
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/ajix-full-dark.svg"
+              src="/logo/ajix-full-dark.svg"
               alt="AJIX logo mark"
               width={64}
               height={40}

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
@@ -80,6 +81,16 @@ export function CollectionCard({
           >
             <ArrowUpRight size={20} className="text-foreground" />
           </motion.div>
+        </div>
+
+        <div className="border-border relative my-2 h-fit w-full overflow-hidden rounded-2xl border">
+          <Image
+            src={collection.image}
+            alt={collection.title}
+            width={80}
+            height={80}
+            className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+          />
         </div>
 
         <div className="relative z-10">

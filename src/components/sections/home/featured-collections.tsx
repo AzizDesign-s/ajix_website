@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { SectionHeader } from "@/components/layout/section-header";
-import { CollectionCard } from "@/components/sections/featured-work/collection-card";
+import { CollectionCard } from "@/components/sections/home/featured-work/collection-card";
 import { collections } from "@/config/collections";
 import { staggerContainer, fadeUp } from "@/lib/motion";
 
@@ -13,9 +13,9 @@ export function FeaturedCollections() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <Section id="work-preview" className="relative overflow-hidden">
+    <Section id="work-preview" className="relative">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="bg-brand-blue/10 absolute top-1/4 left-[10%] h-72 w-72 rounded-full blur-[110px]" />
+        <div className="bg-brand-blue/20 absolute top-1/4 left-[10%] h-72 w-72 rounded-full blur-[110px]" />
         <div className="bg-brand-cyan/10 absolute right-[10%] bottom-0 h-72 w-72 rounded-full blur-[110px]" />
       </div>
 

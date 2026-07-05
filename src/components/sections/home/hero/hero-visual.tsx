@@ -64,7 +64,7 @@ export function HeroVisual() {
         <div className="absolute inset-2 rounded-full bg-[conic-gradient(from_0deg,transparent,var(--color-brand-cyan),transparent_60%)] opacity-40 blur-md" />
         <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-white/95 p-3 shadow-lg">
           <Image
-            src="/ajix-icon-light.svg"
+            src="/logo/ajix-icon-light.svg"
             alt="AJIX logo mark"
             width={64}
             height={40}

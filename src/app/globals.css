@@ -208,6 +208,37 @@
     mask-composite: exclude;
     opacity: 0.6;
   }
+
+  .corner-brackets {
+    position: relative;
+  }
+
+  .corner-brackets::before,
+  .corner-brackets::after,
+  .corner-brackets .bracket-tr,
+  .corner-brackets .bracket-bl {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    pointer-events: none;
+  }
+
+  .corner-brackets::before {
+    top: 14px;
+    left: 14px;
+    border-top: 2px solid var(--bracket-color, var(--color-brand-blue));
+    border-left: 2px solid var(--bracket-color, var(--color-brand-blue));
+    border-top-left-radius: 8px;
+  }
+
+  .corner-brackets::after {
+    bottom: 14px;
+    right: 14px;
+    border-bottom: 2px solid var(--bracket-color, var(--color-brand-blue));
+    border-right: 2px solid var(--bracket-color, var(--color-brand-blue));
+    border-bottom-right-radius: 8px;
+  }
 }
 
 @keyframes float-idle {

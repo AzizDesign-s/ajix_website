@@ -1,12 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { HeroBackground } from "@/components/sections/hero/hero-background";
+import { HeroBackground } from "@/components/sections/home/hero/hero-background";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Container } from "@/components/layout/container";
 import { ScrollIndicator } from "@/components/ui/scroll-indicator";
-import { HeroVisual } from "@/components/sections/hero/hero-visual";
+import { HeroVisual } from "@/components/sections/home/hero/hero-visual";
 import { fadeUp, staggerContainer } from "@/lib/motion";
 
 export function Hero() {
