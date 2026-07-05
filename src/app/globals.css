@@ -215,6 +215,16 @@
   }
 }
 
+@keyframes dot-twinkle {
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 body {
   background-color: var(--color-background);
   color: var(--color-foreground);
