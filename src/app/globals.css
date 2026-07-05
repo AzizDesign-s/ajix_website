@@ -136,6 +136,11 @@
   --color-warning: var(--warning);
   --color-danger: var(--danger);
 
+  --color-brand-cyan: var(--color-brand-cyan);
+  --color-brand-blue: var(--color-brand-blue);
+  --color-brand-blue-light: var(--color-brand-blue-light);
+  --color-brand-indigo: var(--color-brand-indigo);
+
   --color-ring: var(--ring);
 
   --font-sans: var(--font-inter);
@@ -215,14 +220,10 @@
   }
 }
 
-@keyframes dot-twinkle {
-  0%,
-  100% {
-    opacity: 0.15;
-  }
-  50% {
-    opacity: 1;
-  }
+.dot-glow {
+  animation: dot-twinkle var(--dot-duration, 4s) ease-in-out
+    var(--dot-delay, 0s) infinite;
+  filter: drop-shadow(0 0 3px var(--dot-color, currentColor));
 }
 
 body {

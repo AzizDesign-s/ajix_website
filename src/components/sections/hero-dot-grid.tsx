@@ -76,10 +76,14 @@ export function HeroDotGrid() {
             cy={dot.cy}
             r={1.6}
             fill={dot.color}
-            style={{
-              animation: `dot-twinkle ${dot.duration}s ease-in-out ${dot.delay}s infinite`,
-              filter: `drop-shadow(0 0 3px ${dot.color})`,
-            }}
+            className="dot-glow"
+            style={
+              {
+                "--dot-color": dot.color,
+                "--dot-duration": `${dot.duration}s`,
+                "--dot-delay": `${dot.delay}s`,
+              } as React.CSSProperties
+            }
           />
         ) : (
           <circle

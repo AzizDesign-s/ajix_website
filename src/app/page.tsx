@@ -1,10 +1,11 @@
 import { Hero } from "@/components/sections/hero";
-import Image from "next/image";
+import { FeaturedCollections } from "@/components/sections/featured-collections";
 
 export default function Home() {
   return (
     <>
       <Hero />
+      <FeaturedCollections />
     </>
   );
 }
