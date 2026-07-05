@@ -1,6 +1,27 @@
 import type { Metadata } from "next";
+import { SmoothScrollProvider } from "@/components/shared/smooth-scroll-provider";
+import { Inter, Space_Grotesk, IBM_Plex_Sans_Arabic } from "next/font/google";
 import { ThemeProvider } from "@/components/shared/theme-provider";
+import { LocaleProvider } from "@/lib/i18n/locale-context";
+import { Navbar } from "@/components/layout/navbar";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
+const ibmPlexArabic = IBM_Plex_Sans_Arabic({
+  subsets: ["arabic"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-arabic",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "AJIX — Enterprise Product Designer",
@@ -14,9 +35,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${inter.variable} ${spaceGrotesk.variable} ${ibmPlexArabic.variable}`}
+    >
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <LocaleProvider>
+            <Navbar />
+            <SmoothScrollProvider>
+              <main className="pt-24">{children}</main>
+            </SmoothScrollProvider>
+          </LocaleProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
