@@ -2,8 +2,8 @@
 
 import { useMemo } from "react";
 
-const GRID_COLS = 40;
-const GRID_ROWS = 40;
+const GRID_COLS = 24;
+const GRID_ROWS = 14;
 const SPACING = 40;
 const VIEW_WIDTH = GRID_COLS * SPACING;
 const VIEW_HEIGHT = GRID_ROWS * SPACING;
@@ -47,8 +47,8 @@ export function HeroDotGrid() {
             GLOW_COLORS[
               Math.floor(seededRandom(seed + 1) * GLOW_COLORS.length)
             ],
-          delay: seededRandom(seed + 2) * 6,
-          duration: 3 + seededRandom(seed + 3) * 4,
+          delay: Math.round(seededRandom(seed + 2) * 600) / 100,
+          duration: Math.round((3 + seededRandom(seed + 3) * 4) * 100) / 100,
         });
         i++;
       }
@@ -74,8 +74,9 @@ export function HeroDotGrid() {
             key={idx}
             cx={dot.cx}
             cy={dot.cy}
-            r={1.6}
+            r={1.2}
             fill={dot.color}
+            opacity={0.8}
             className="dot-glow"
             style={
               {

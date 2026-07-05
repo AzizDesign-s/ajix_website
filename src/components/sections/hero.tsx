@@ -19,7 +19,7 @@ export function Hero() {
       />
       <HeroBackground />
 
-      <Container className="relative z-10">
+      <Container className="relative z-10 pt-24">
         <motion.div
           variants={staggerContainer}
           initial="hidden"

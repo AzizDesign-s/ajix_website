@@ -11,4 +11,4 @@ export const availabilityConfig: Record<
 };
 
 // Sprint 1: hardcoded mock. Sprint 2+: this comes from Supabase settings table.
-export const currentAvailability: AvailabilityStatus = "open";
+export const currentAvailability: AvailabilityStatus = "available";

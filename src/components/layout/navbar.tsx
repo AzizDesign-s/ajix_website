@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { AvailabilityBadge } from "@/components/ui/availability-badge";
@@ -20,11 +21,15 @@ export function Navbar() {
           className="border-border bg-surface/70 flex w-full max-w-4xl items-center justify-between rounded-full border px-4 py-2.5 shadow-md backdrop-blur-md md:px-6"
           aria-label="Primary navigation"
         >
-          <Link
-            href="/"
-            className="font-display text-foreground focus-visible:ring-ring rounded-md text-lg font-bold tracking-tight focus-visible:ring-2 focus-visible:outline-none"
-          >
-            {siteConfig.name}
+          <Link href="/" className="flex items-center gap-2">
+            <Image
+              src="/ajix-full-dark.svg"
+              alt="AJIX logo mark"
+              width={64}
+              height={40}
+              className="h-auto w-36"
+              priority
+            />
           </Link>
 
           {/* Desktop links - hidden on mobile */}
@@ -46,13 +51,13 @@ export function Navbar() {
             <AvailabilityBadge />
             <LanguageToggle />
             <ThemeToggle />
-            <Button asChild variant="secondary" size="sm">
+            <Button asChild variant="primary" size="sm">
               <a
                 href={siteConfig.resumeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Resume
+                Get Resume
               </a>
             </Button>
           </div>

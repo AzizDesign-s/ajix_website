@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -50,15 +51,20 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="bg-surface fixed top-0 right-0 z-50 flex h-full w-full max-w-sm flex-col p-6 md:hidden"
+            className="bg-card/40 fixed top-0 right-0 z-50 flex h-full w-full max-w-sm flex-col p-6 backdrop-blur-xl md:hidden"
             role="dialog"
             aria-modal="true"
             aria-label="Mobile navigation menu"
           >
             <div className="flex items-center justify-between">
-              <span className="font-display text-foreground text-lg font-bold">
-                {siteConfig.name}
-              </span>
+              <Image
+                src="/ajix-full-dark.svg"
+                alt="AJIX logo mark"
+                width={64}
+                height={40}
+                className="h-auto w-36"
+                priority
+              />
               <button
                 type="button"
                 onClick={onClose}
@@ -89,7 +95,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
                 <LanguageToggle />
                 <ThemeToggle />
               </div>
-              <Button asChild variant="primary" size="md" className="w-full">
+              <Button asChild variant="gradient" size="md" className="w-full">
                 <a
                   href={siteConfig.resumeUrl}
                   target="_blank"

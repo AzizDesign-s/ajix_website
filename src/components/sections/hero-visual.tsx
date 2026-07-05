@@ -102,7 +102,7 @@ export function HeroVisual() {
         <div className="from-border h-px w-16 bg-gradient-to-l to-transparent lg:w-24" />
         <div className="border-border/60 bg-card/90 rounded-xl border px-4 py-3 shadow-lg backdrop-blur-md">
           <p className="font-display gradient-brand-text text-xl font-semibold">
-            40+
+            10+
           </p>
           <p className="text-muted-foreground text-xs">Projects Shipped</p>
         </div>
