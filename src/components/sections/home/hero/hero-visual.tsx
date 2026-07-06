@@ -3,9 +3,12 @@
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
 export function HeroVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const prefersReducedMotion = useReducedMotion();
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -58,13 +61,17 @@ export function HeroVisual() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-        style={{ animation: "float-idle 6s ease-in-out infinite" }}
+        style={{
+          animation: prefersReducedMotion
+            ? "none"
+            : "float-idle 6s ease-in-out infinite",
+        }}
         className="relative flex h-40 w-40 items-center justify-center rounded-full border border-white/10 bg-[radial-gradient(circle_at_35%_30%,var(--color-brand-blue-light),var(--color-brand-blue)_45%,var(--color-brand-indigo)_75%,transparent_100%)] shadow-2xl backdrop-blur-sm"
       >
         <div className="absolute inset-2 rounded-full bg-[conic-gradient(from_0deg,transparent,var(--color-brand-cyan),transparent_60%)] opacity-40 blur-md" />
         <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-white/95 p-3 shadow-lg">
           <Image
-            src="/logo/ajix-icon-light.svg"
+            src="images/logo/ajix-icon-light.svg"
             alt="AJIX logo mark"
             width={64}
             height={40}

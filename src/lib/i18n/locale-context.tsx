@@ -22,6 +22,7 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const stored = localStorage.getItem("ajix-locale") as Locale | null;
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- reading a one-time value from localStorage on mount, not a synchronization loop
     if (stored) setLocaleState(stored);
   }, []);
 

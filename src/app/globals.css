@@ -208,37 +208,6 @@
     mask-composite: exclude;
     opacity: 0.6;
   }
-
-  .corner-brackets {
-    position: relative;
-  }
-
-  .corner-brackets::before,
-  .corner-brackets::after,
-  .corner-brackets .bracket-tr,
-  .corner-brackets .bracket-bl {
-    content: "";
-    position: absolute;
-    width: 22px;
-    height: 22px;
-    pointer-events: none;
-  }
-
-  .corner-brackets::before {
-    top: 14px;
-    left: 14px;
-    border-top: 2px solid var(--bracket-color, var(--color-brand-blue));
-    border-left: 2px solid var(--bracket-color, var(--color-brand-blue));
-    border-top-left-radius: 8px;
-  }
-
-  .corner-brackets::after {
-    bottom: 14px;
-    right: 14px;
-    border-bottom: 2px solid var(--bracket-color, var(--color-brand-blue));
-    border-right: 2px solid var(--bracket-color, var(--color-brand-blue));
-    border-bottom-right-radius: 8px;
-  }
 }
 
 @keyframes float-idle {
@@ -248,6 +217,105 @@
   }
   50% {
     transform: translateY(-14px);
+  }
+}
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.marquee-track {
+  animation: marquee-left var(--marquee-duration, 32s) linear infinite;
+}
+
+.marquee-track-reverse {
+  animation: marquee-right var(--marquee-duration, 32s) linear infinite;
+}
+
+.marquee-row:hover .marquee-track,
+.marquee-row:hover .marquee-track-reverse {
+  animation-play-state: paused;
+}
+
+/* Rotating gradient ring - degrades gracefully if @property isn't supported */
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes border-rotate {
+  to {
+    --border-angle: 360deg;
+  }
+}
+
+.animated-gradient-ring {
+  position: relative;
+  border-radius: 1.5rem;
+  isolation: isolate;
+}
+
+.animated-gradient-ring::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--border-angle),
+    var(--color-brand-cyan),
+    var(--color-brand-blue),
+    var(--color-brand-indigo),
+    var(--color-brand-cyan)
+  );
+  animation: border-rotate 6s linear infinite;
+}
+
+/* Shimmering gradient text */
+@keyframes text-shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.text-shimmer {
+  background: linear-gradient(
+    100deg,
+    var(--color-brand-cyan) 0%,
+    #ffffff 50%,
+    var(--color-brand-indigo) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: text-shimmer 4s linear infinite;
+}
+
+/* Pulsing glow behind the primary CTA */
+@keyframes cta-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(1.1);
   }
 }
 
@@ -267,4 +335,20 @@ body {
 
 html[lang="ar"] body {
   font-family: var(--font-arabic), var(--font-sans);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .marquee-track,
+  .marquee-track-reverse {
+    animation: none !important;
+  }
 }

@@ -3,6 +3,8 @@ import { FeaturedCollections } from "@/components/sections/home/featured-collect
 import { WhatIDo } from "@/components/sections/home/what-i-do";
 import { SelectedProjects } from "@/components/sections/home/selected-projects";
 import { WhyAjix } from "@/components/sections/home/why-ajix";
+import { LetsConnect } from "@/components/sections/home/cta/lets-connect";
+import { ToolsSection } from "@/components/sections/home/tools-section";
 
 export default function Home() {
   return (
@@ -10,8 +12,10 @@ export default function Home() {
       <Hero />
       <FeaturedCollections />
       <WhatIDo />
+      <ToolsSection />
       <SelectedProjects />
       <WhyAjix />
+      <LetsConnect />
     </>
   );
 }

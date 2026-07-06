@@ -1,0 +1,16 @@
+<svg width="500" height="560" viewBox="0 0 500 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="250" cy="180" rx="90" ry="95" fill="url(#connectGradient)"/>
+  <path d="M120 420C120 330 180 290 250 290C320 290 380 330 380 420V480C380 497 366 510 350 510H150C133 510 120 497 120 480V420Z" fill="url(#connectGradient)" fill-opacity="0.85"/>
+  <rect x="60" y="440" width="120" height="80" rx="12" fill="white" fill-opacity="0.08"/>
+  <rect x="320" y="400" width="120" height="100" rx="12" fill="white" fill-opacity="0.08"/>
+  <circle cx="90" cy="130" r="8" fill="white" fill-opacity="0.5"/>
+  <circle cx="420" cy="200" r="6" fill="white" fill-opacity="0.4"/>
+  <circle cx="410" cy="100" r="4" fill="white" fill-opacity="0.6"/>
+  <defs>
+    <linearGradient id="connectGradient" x1="120" y1="80" x2="380" y2="510" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE"/>
+      <stop offset="0.55" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#4F46E5"/>
+    </linearGradient>
+  </defs>
+</svg>

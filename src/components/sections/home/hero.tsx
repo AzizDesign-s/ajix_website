@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Container } from "@/components/layout/container";
 import { ScrollIndicator } from "@/components/ui/scroll-indicator";
 import { HeroVisual } from "@/components/sections/home/hero/hero-visual";
+import { Magnetic } from "@/components/ui/magnetic";
 import { fadeUp, staggerContainer } from "@/lib/motion";
 
 export function Hero() {
@@ -54,9 +55,11 @@ export function Hero() {
             variants={fadeUp}
             className="mt-10 flex flex-wrap justify-center gap-4"
           >
-            <Button asChild variant="gradient" size="lg">
-              <a href="/work">View Work</a>
-            </Button>
+            <Magnetic>
+              <Button asChild variant="gradient" size="lg">
+                <a href="/work">View Work</a>
+              </Button>
+            </Magnetic>
             <Button asChild variant="secondary" size="lg">
               <a href="/contact">Let&apos;s Connect</a>
             </Button>

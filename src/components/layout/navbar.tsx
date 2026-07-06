@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 import { AvailabilityBadge } from "@/components/ui/availability-badge";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { LanguageToggle } from "@/components/ui/language-toggle";
@@ -13,6 +15,19 @@ import { Menu } from "lucide-react";
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { resolvedTheme } = useTheme();
+
+  const [mounted, setMounted] = useState(false);
+
+  // Prevents a hydration mismatch: server doesn't know the theme yet
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const logoSrc =
+    mounted && resolvedTheme === "light"
+      ? "/images/logo/ajix-full-light.svg"
+      : "/images/logo/ajix-full-dark.svg";
 
   return (
     <>
@@ -23,7 +38,7 @@ export function Navbar() {
         >
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/logo/ajix-full-dark.svg"
+              src={logoSrc}
               alt="AJIX logo mark"
               width={64}
               height={40}

@@ -1,7 +1,6 @@
 "use client";
 
 import { useCountUp } from "@/hooks/use-count-up";
-import { cn } from "@/lib/utils";
 
 export function AnimatedCounter({
   value,

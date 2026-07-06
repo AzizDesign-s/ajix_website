@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 import { AvailabilityBadge } from "@/components/ui/availability-badge";
@@ -17,6 +18,18 @@ interface MobileNavProps {
 }
 
 export function MobileNav({ open, onClose }: MobileNavProps) {
+  const { resolvedTheme } = useTheme();
+
+  const [mounted, setMounted] = useState(false);
+
+  // Prevents a hydration mismatch: server doesn't know the theme yet
+  useEffect(() => setMounted(true), []);
+
+  const logoSrc =
+    mounted && resolvedTheme === "light"
+      ? "/images/logo/ajix-full-light.svg"
+      : "/images/logo/ajix-full-dark.svg";
+
   // Close on Escape key, lock body scroll while open
   useEffect(() => {
     if (!open) return;
@@ -58,7 +71,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
           >
             <div className="flex items-center justify-between">
               <Image
-                src="/logo/ajix-full-dark.svg"
+                src={logoSrc}
                 alt="AJIX logo mark"
                 width={64}
                 height={40}

@@ -4,6 +4,7 @@ import { Inter, Space_Grotesk, IBM_Plex_Sans_Arabic } from "next/font/google";
 import { ThemeProvider } from "@/components/shared/theme-provider";
 import { LocaleProvider } from "@/lib/i18n/locale-context";
 import { Navbar } from "@/components/layout/navbar";
+import { Footer } from "@/components/layout/footer";
 import "./globals.css";
 
 const inter = Inter({
@@ -24,9 +25,40 @@ const ibmPlexArabic = IBM_Plex_Sans_Arabic({
 });
 
 export const metadata: Metadata = {
-  title: "Abdul Aziz — Enterprise Product Designer",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
+  ),
+  title: {
+    default: "AJIX — Enterprise Product Designer",
+    template: "%s | AJIX",
+  },
   description:
     "Abdul Aziz (AJIX) — Enterprise Product Designer specializing in research-driven, accessible, scalable digital products.",
+  keywords: [
+    "Enterprise Product Designer",
+    "UI UX Designer Dubai",
+    "React Developer",
+    "Product Design Systems",
+  ],
+  authors: [{ name: "Abdul Aziz" }],
+  openGraph: {
+    title: "AJIX — Enterprise Product Designer",
+    description:
+      "Research-driven, accessible, scalable digital products — product design and frontend engineering.",
+    url: "/",
+    siteName: "AJIX",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AJIX — Enterprise Product Designer",
+    description:
+      "Research-driven, accessible, scalable digital products — product design and frontend engineering.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -46,6 +78,7 @@ export default function RootLayout({
             <Navbar />
             <SmoothScrollProvider>
               <main>{children}</main>
+              <Footer />
             </SmoothScrollProvider>
           </LocaleProvider>
         </ThemeProvider>
