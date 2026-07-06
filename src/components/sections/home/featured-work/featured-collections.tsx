@@ -6,10 +6,11 @@ import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { SectionHeader } from "@/components/layout/section-header";
 import { CollectionCard } from "@/components/sections/home/featured-work/collection-card";
-import { collections } from "@/config/collections";
+import { getCategories } from "@/lib/services/category-service";
 import { staggerContainer, fadeUp } from "@/lib/motion";
 
 export function FeaturedCollections() {
+  const categories = getCategories();
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
@@ -33,10 +34,10 @@ export function FeaturedCollections() {
           viewport={{ once: true, margin: "-80px" }}
           className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
         >
-          {collections.map((collection, index) => (
-            <motion.div key={collection.slug} variants={fadeUp}>
+          {categories.map((category, index) => (
+            <motion.div key={category.slug} variants={fadeUp}>
               <CollectionCard
-                collection={collection}
+                collection={category}
                 index={index}
                 hoveredIndex={hoveredIndex}
                 onHover={setHoveredIndex}

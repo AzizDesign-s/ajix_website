@@ -1,0 +1,48 @@
+import type { Project } from "@/types/project";
+
+export const brandingProjects: Project[] = [
+  {
+    id: "7",
+    slug: "ajix-brand-identity",
+    title: "AJIX Brand Identity",
+    description: "Personal brand system and visual language.",
+    category: "branding",
+    tool: "Illustrator",
+    image: "/images/projects/placeholder-mockup.svg",
+    gallery: ["/images/projects/placeholder-mockup.svg"],
+    technologies: ["Illustrator"],
+    tags: ["Branding", "Personal Brand"],
+    status: "completed",
+    showInSelectedProjects: false,
+    span: "lg:col-span-4 lg:row-span-1",
+    breakout: "top-left",
+    imageWidth: "w-[60%]",
+    seo: {
+      title: "AJIX Brand Identity — Project",
+      description: "Personal brand identity system for AJIX.",
+    },
+    relatedSlugs: ["nexora-brand-system"],
+  },
+  {
+    id: "8",
+    slug: "nexora-brand-system",
+    title: "Nexora Brand System",
+    description: "Full identity system for an enterprise SaaS.",
+    category: "branding",
+    tool: "Illustrator",
+    image: "/images/projects/placeholder-mockup.svg",
+    gallery: ["/images/projects/placeholder-mockup.svg"],
+    technologies: ["Illustrator"],
+    tags: ["Branding", "Enterprise"],
+    status: "completed",
+    showInSelectedProjects: false,
+    span: "lg:col-span-4 lg:row-span-1",
+    breakout: "bottom-left",
+    imageWidth: "w-[60%]",
+    seo: {
+      title: "Nexora Brand System — Project",
+      description: "Full brand identity system for an enterprise SaaS product.",
+    },
+    relatedSlugs: ["ajix-brand-identity"],
+  },
+];

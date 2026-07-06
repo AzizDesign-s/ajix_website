@@ -6,10 +6,12 @@ import { Section } from "@/components/layout/section";
 import { SectionHeader } from "@/components/layout/section-header";
 import { ProjectCard } from "@/components/sections/home/project/project-card";
 import { Button } from "@/components/ui/button";
-import { projects } from "@/config/projects";
+import { getSelectedProjects } from "@/lib/services/project-service";
 import { staggerContainer } from "@/lib/motion";
 
 export function SelectedProjects() {
+  const projects = getSelectedProjects();
+
   return (
     <Section id="selected-projects">
       <Container>
