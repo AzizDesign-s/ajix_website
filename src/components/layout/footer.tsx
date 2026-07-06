@@ -1,6 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 import { ArrowUp } from "lucide-react";
 import { FaGithub, FaLinkedin, FaInstagram, FaBehance } from "react-icons/fa6";
 import { Container } from "@/components/layout/container";
@@ -16,12 +19,35 @@ export function Footer() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
+  // Avoid rendering the wrong logo variant before the theme is known
+  const logoSrc =
+    mounted && resolvedTheme === "light"
+      ? "/images/logo/ajix-icon-light.svg"
+      : "/images/logo/ajix-icon-dark.svg";
+
   return (
     <footer className="border-border/40 relative border-t">
       <Container className="py-16">
         {/* Top row: nav + availability + socials */}
         <div className="border-border/30 flex flex-col items-center gap-8 border-b pb-12 md:flex-row md:items-center md:justify-between md:gap-4">
           <ul className="flex flex-wrap items-center justify-center gap-6">
+            {mounted && (
+              <Link href="/" className="flex items-center gap-2">
+                <Image
+                  src={logoSrc}
+                  alt={`${siteConfig.name} logo`}
+                  width={751}
+                  height={146}
+                  className="h-auto w-12"
+                  priority={false}
+                />
+              </Link>
+            )}
             {siteConfig.navLinks.map((link) => (
               <li key={link.href}>
                 <Link
@@ -34,7 +60,7 @@ export function Footer() {
             ))}
           </ul>
 
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-start justify-center gap-4 sm:items-center">
             <AvailabilityBadge />
             <div className="flex items-center gap-3">
               <SocialLink href={siteConfig.socials.linkedin} label="LinkedIn">

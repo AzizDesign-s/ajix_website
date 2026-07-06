@@ -44,7 +44,6 @@ export function ProjectCard({ project }: { project: Project }) {
           <div
             aria-hidden="true"
             className="absolute h-1/2 w-1/2 rounded-full opacity-[0.1] blur-[60px]"
-            style={{ background: bracket }}
           />
           {/* Liquid glass sheen - soft light blob, gives the "glass" a highlight */}
           <div

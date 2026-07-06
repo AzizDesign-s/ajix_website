@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaInstagram, FaBehance } from "react-icons/fa6";
+
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
@@ -86,24 +86,6 @@ export function LetsConnect() {
                   Download Resume
                 </a>
               </Button>
-            </motion.div>
-
-            <motion.div
-              variants={fadeUp}
-              className="mt-10 flex items-center gap-4"
-            >
-              <SocialLink href={siteConfig.socials.linkedin} label="LinkedIn">
-                <FaLinkedin size={18} />
-              </SocialLink>
-              <SocialLink href={siteConfig.socials.behance} label="Behance">
-                <FaBehance size={18} />
-              </SocialLink>
-              <SocialLink href={siteConfig.socials.instagram} label="Instagram">
-                <FaInstagram size={18} />
-              </SocialLink>
-              <SocialLink href={siteConfig.socials.github} label="GitHub">
-                <FaGithub size={18} />
-              </SocialLink>
             </motion.div>
           </motion.div>
 
