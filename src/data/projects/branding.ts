@@ -15,7 +15,7 @@ export const brandingProjects: Project[] = [
     status: "completed",
     showInSelectedProjects: false,
     span: "lg:col-span-4 lg:row-span-1",
-    breakout: "top-left",
+    breakout: "top-right",
     imageWidth: "w-[60%]",
     seo: {
       title: "AJIX Brand Identity — Project",
@@ -37,7 +37,7 @@ export const brandingProjects: Project[] = [
     status: "completed",
     showInSelectedProjects: false,
     span: "lg:col-span-4 lg:row-span-1",
-    breakout: "bottom-left",
+    breakout: "bottom-right",
     imageWidth: "w-[60%]",
     seo: {
       title: "Nexora Brand System — Project",

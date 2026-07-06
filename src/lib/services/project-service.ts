@@ -57,3 +57,16 @@ export function filterProjects({ category, query }: ProjectFilters): Project[] {
 
   return results;
 }
+
+export function getWorkStats() {
+  const categorySet = new Set(allProjects.map((project) => project.category));
+  const technologySet = new Set(
+    allProjects.flatMap((project) => project.technologies)
+  );
+
+  return {
+    totalProjects: allProjects.length,
+    totalCategories: categorySet.size,
+    totalTechnologies: technologySet.size,
+  };
+}

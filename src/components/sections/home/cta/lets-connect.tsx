@@ -12,8 +12,25 @@ import { Magnetic } from "@/components/ui/magnetic";
 import { useMouseParallax } from "@/hooks/use-mouse-parallax";
 import { siteConfig } from "@/config/site";
 import { fadeUp, staggerContainer } from "@/lib/motion";
+import { ReactNode } from "react";
 
-export function LetsConnect() {
+interface LetsConnectProps {
+  eyebrow?: string;
+  title?: ReactNode;
+  description?: string;
+}
+
+export function LetsConnect({
+  eyebrow = "Let's Connect",
+  title = (
+    <>
+      Have a project in mind?
+      <br />
+      Let&apos;s build it <span className="text-shimmer">right.</span>
+    </>
+  ),
+  description = "Open to enterprise product design roles and select freelance engagements across the UAE and beyond.",
+}: LetsConnectProps) {
   const { x, y } = useMouseParallax(14);
 
   return (
@@ -32,24 +49,21 @@ export function LetsConnect() {
               variants={fadeUp}
               className="text-accent text-xs font-semibold tracking-widest uppercase"
             >
-              Let&apos;s Connect
+              {eyebrow}
             </motion.span>
 
             <motion.h2
               variants={fadeUp}
               className="font-display text-foreground mt-4 text-4xl font-semibold tracking-tight md:text-5xl"
             >
-              Have a project in mind?
-              <br />
-              Let&apos;s build it <span className="text-shimmer">right.</span>
+              {title}
             </motion.h2>
 
             <motion.p
               variants={fadeUp}
               className="text-foreground/70 mt-5 max-w-md text-base leading-relaxed"
             >
-              Open to enterprise product design roles and select freelance
-              engagements across the UAE and beyond.
+              {description}
             </motion.p>
 
             <motion.div

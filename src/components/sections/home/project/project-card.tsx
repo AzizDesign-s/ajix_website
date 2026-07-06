@@ -30,7 +30,13 @@ const breakoutPosition: Record<Breakout, string> = {
   center: "top-40 left-1/2 -translate-x-1/2 -translate-y-1/2",
 };
 
-export function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({
+  project,
+  forceSpan,
+}: {
+  project: Project;
+  forceSpan?: string;
+}) {
   const { dot, bracket } = categoryStyles[project.category];
   const categoryLabel =
     getCategoryBySlug(project.category)?.name ?? project.category;
@@ -39,7 +45,10 @@ export function ProjectCard({ project }: { project: Project }) {
   return (
     <motion.div
       variants={fadeUp}
-      className={cn("relative h-full min-h-60 overflow-hidden", project.span)}
+      className={cn(
+        "relative h-full min-h-60 overflow-hidden",
+        forceSpan ?? project.span
+      )}
       style={{ "--bracket-color": bracket } as React.CSSProperties}
     >
       <Link
