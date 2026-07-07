@@ -1,7 +1,5 @@
-"use client";
-
-import { useRef } from "react";
 import Image from "next/image";
+import { GlowPanel } from "@/components/ui/work/glow-panel";
 import { cn } from "@/lib/utils";
 
 type FrameAspect = "video" | "square" | "portrait" | "landscape";
@@ -30,26 +28,12 @@ export function ImageFrame({
   priority,
   className,
 }: ImageFrameProps) {
-  const frameRef = useRef<HTMLDivElement>(null);
-
-  function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
-    const rect = frameRef.current?.getBoundingClientRect();
-    if (!rect) return;
-    const mx = ((e.clientX - rect.left) / rect.width) * 100;
-    const my = ((e.clientY - rect.top) / rect.height) * 100;
-    frameRef.current?.style.setProperty("--mx", `${mx}%`);
-    frameRef.current?.style.setProperty("--my", `${my}%`);
-  }
-
   return (
-    <div
-      ref={frameRef}
-      onMouseMove={handleMouseMove}
+    <GlowPanel
       onClick={onClick}
       className={cn(
-        "glow-border border-border/40 bg-background/60 relative overflow-hidden rounded-2xl border",
+        "bg-background/60 overflow-hidden",
         aspectClasses[aspect],
-        onClick && "cursor-zoom-in",
         className
       )}
     >
@@ -61,6 +45,6 @@ export function ImageFrame({
         priority={priority}
         className="object-contain p-4"
       />
-    </div>
+    </GlowPanel>
   );
 }

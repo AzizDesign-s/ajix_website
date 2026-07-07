@@ -9,7 +9,24 @@ export const uiUxProjects: Project[] = [
     category: "ui-ux",
     tool: "Figma",
     image: "/images/projects/placeholder-mockup.svg",
-    gallery: ["/images/projects/placeholder-mockup.svg"],
+    gallery: [
+      {
+        src: "/images/projects/placeholder-mockup.svg",
+        orientation: "portrait",
+      },
+      {
+        src: "/images/projects/placeholder-mockup.svg",
+        orientation: "portrait",
+      },
+      {
+        src: "/images/projects/placeholder-mockup.svg",
+        orientation: "landscape",
+      },
+      {
+        src: "/images/projects/placeholder-mockup.svg",
+        orientation: "portrait",
+      },
+    ],
     technologies: ["Figma", "FigJam"],
     tags: ["Enterprise", "Dashboard", "Automotive"],
     status: "completed",
@@ -135,7 +152,24 @@ export const uiUxProjects: Project[] = [
     category: "ui-ux",
     tool: "Figma",
     image: "/images/projects/placeholder-mockup.svg",
-    gallery: ["/images/projects/placeholder-mockup.svg"],
+    gallery: [
+      {
+        src: "/images/projects/placeholder-mockup.svg",
+        orientation: "portrait",
+      },
+      {
+        src: "/images/projects/placeholder-mockup.svg",
+        orientation: "portrait",
+      },
+      {
+        src: "/images/projects/placeholder-mockup.svg",
+        orientation: "landscape",
+      },
+      {
+        src: "/images/projects/placeholder-mockup.svg",
+        orientation: "portrait",
+      },
+    ],
     technologies: ["Figma"],
     tags: ["Automotive", "Simulation"],
     status: "completed",

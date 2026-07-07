@@ -3,6 +3,20 @@ export type ProjectStatus = "completed" | "in-progress";
 export type Breakout =
   "top-right" | "top-left" | "bottom-right" | "bottom-left" | "center";
 
+export interface ReactFeature {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+export interface ReactProjectContent {
+  about: string;
+  aboutImage?: string;
+  features?: ReactFeature[];
+  architecture: string;
+  architectureImage?: string;
+}
+
 export interface Category {
   slug: ProjectCategorySlug;
   name: string;
@@ -77,11 +91,11 @@ export interface Project {
   category: ProjectCategorySlug;
   tool: string;
   image: string;
-  gallery: string[];
+  gallery: GalleryImage[];
   technologies: string[];
   tags: string[];
   status: ProjectStatus;
-
+  framerContent?: FramerProjectContent; // only present for "framer" category
   // Controls the Selected Projects section on the homepage.
   // Business rule: max 6 projects can have this set to true.
   // Enforced in the service layer (getSelectedProjects) as a safety net;
@@ -95,11 +109,23 @@ export interface Project {
   span: string;
   breakout: Breakout;
   imageWidth: string;
-
+  reactContent?: ReactProjectContent;
   liveUrl?: string;
   githubUrl?: string;
   architectureUrl?: string;
   caseStudy?: CaseStudyContent;
   seo: ProjectSEO;
   relatedSlugs: string[];
+}
+
+export interface FramerDetail {
+  label: string;
+  value: string;
+}
+
+export interface FramerProjectContent {
+  about: string;
+  aboutImage?: string;
+  features?: ReactFeature[]; // same shape/icon system as the React template
+  cmsDetails?: FramerDetail[];
 }
