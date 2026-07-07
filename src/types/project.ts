@@ -10,13 +10,57 @@ export interface Category {
   image: string;
 }
 
+export interface GalleryImage {
+  src: string;
+  orientation: "portrait" | "landscape" | "square";
+}
+
+export interface CaseStudyMetric {
+  label: string;
+  value: number;
+  suffix?: string;
+}
+
+export interface CaseStudyPersona {
+  name: string;
+  role: string;
+  goal: string;
+  frustration: string;
+}
+
+export interface CaseStudyJourneyStage {
+  stage: string;
+  description: string;
+}
+
+export interface CaseStudyOverview {
+  role: string;
+  timeline: string;
+  tools: string[];
+}
+
 export interface CaseStudyContent {
+  coverImage?: string;
+  overview: CaseStudyOverview;
   problem: string;
   businessGoals: string[];
+  businessGoalsImage?: string;
   research?: string;
+  researchImage?: string;
+  personas?: CaseStudyPersona[];
+  journeyMap?: CaseStudyJourneyStage[];
+  wireframes?: GalleryImage[];
+  designSystem?: string;
+  designSystemImage?: string;
+  highFidelity?: GalleryImage[];
+  accessibility?: string;
+  accessibilityImage?: string;
   challenges: string;
+  challengesImage?: string;
   businessResults: string;
+  resultMetrics?: CaseStudyMetric[];
   keyLearnings: string;
+  keyLearningsImage?: string;
 }
 
 export interface ProjectSEO {

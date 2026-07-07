@@ -22,8 +22,8 @@ export function ProjectActionButtons({ project }: { project: Project }) {
         </Button>
       )}
       {hasCaseStudy && (
-        <Button asChild variant="secondary" size="md">
-          <a href={`/work/${project.slug}#case-study`}>Detailed Case Study</a>
+        <Button asChild variant="primary" size="md">
+          <a href={`/work/${project.slug}#overview`}>Detailed Case Study</a>
         </Button>
       )}
       {hasArchitecture && (

@@ -10,6 +10,8 @@ export function HeroVisual() {
 
   const prefersReducedMotion = useReducedMotion();
 
+  const logo = "/images/logo/ajix-icon-light.svg";
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
@@ -71,10 +73,10 @@ export function HeroVisual() {
         <div className="absolute inset-2 rounded-full bg-[conic-gradient(from_0deg,transparent,var(--color-brand-cyan),transparent_60%)] opacity-40 blur-md" />
         <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-white/95 p-3 shadow-lg">
           <Image
-            src="images/logo/ajix-icon-light.svg"
+            src={logo}
             alt="AJIX logo mark"
             width={64}
-            height={40}
+            height={64}
             className="h-auto w-full"
             priority
           />
