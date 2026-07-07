@@ -57,7 +57,7 @@ export function ProjectCard({
         aria-label={`View ${project.title} case study`}
       >
         {/* Clipped panel: background, border, brackets, text */}
-        <div className="corner-brackets border-border/40 bg-card/40 relative flex h-full flex-col overflow-hidden rounded-2xl border p-4 backdrop-blur-xl transition-colors duration-300">
+        <div className="border-border/40 bg-card/40 relative flex h-full flex-col overflow-hidden rounded-2xl border p-4 backdrop-blur-xl transition-colors duration-300">
           {/* Liquid glass sheen */}
           <div
             aria-hidden="true"

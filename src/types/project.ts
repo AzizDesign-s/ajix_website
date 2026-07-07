@@ -101,7 +101,7 @@ export interface Project {
   // Enforced in the service layer (getSelectedProjects) as a safety net;
   // in the future admin/CMS, the toggle UI itself should disable once 6 are active.
   showInSelectedProjects: boolean;
-
+  brandingContent?: BrandingProjectContent;
   // Bento layout fields for the Selected Projects card - deliberately kept as
   // per-project data (not computed) since breakout position/size is an
   // art-directed design choice per project, not something that should be
@@ -128,4 +128,27 @@ export interface FramerProjectContent {
   aboutImage?: string;
   features?: ReactFeature[]; // same shape/icon system as the React template
   cmsDetails?: FramerDetail[];
+}
+
+export interface BrandColorSwatch {
+  name: string;
+  hex: string;
+}
+
+export interface BrandTypographySpecimen {
+  role: string; // e.g. "Display", "Body", "Caption"
+  fontFamily: string; // e.g. "Space Grotesk", "Inter"
+  weight: string; // e.g. "600 · Semibold"
+  sample: string;
+  fontClass: "font-display" | "font-sans"; // maps to your real design tokens
+}
+
+export interface BrandingProjectContent {
+  overview: string;
+  overviewImage?: string;
+  logoImage: string;
+  logoOnDarkImage?: string;
+  colorPalette?: BrandColorSwatch[];
+  typography?: BrandTypographySpecimen[];
+  applications?: GalleryImage[];
 }
