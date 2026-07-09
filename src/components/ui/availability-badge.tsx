@@ -1,8 +1,11 @@
-import { availabilityConfig, currentAvailability } from "@/config/availability";
+import {
+  getCurrentAvailability,
+  availabilityDotColor,
+} from "@/config/availability";
 import { cn } from "@/lib/utils";
 
 export function AvailabilityBadge({ className }: { className?: string }) {
-  const { label, dotClassName } = availabilityConfig[currentAvailability];
+  const { label, level } = getCurrentAvailability();
 
   return (
     <div
@@ -13,7 +16,9 @@ export function AvailabilityBadge({ className }: { className?: string }) {
       role="status"
       aria-label={`Availability status: ${label}`}
     >
-      <span className={cn("h-2 w-2 rounded-full", dotClassName)} />
+      <span
+        className={cn("h-2 w-2 rounded-full", availabilityDotColor[level])}
+      />
       <span className="text-foreground/80 text-xs font-medium">{label}</span>
     </div>
   );

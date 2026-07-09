@@ -24,6 +24,13 @@ import {
   BarChart3,
   PlayCircle,
   MessageCircleOff,
+  Mail,
+  MessageCircle,
+  MapPin,
+  Clock,
+  LayoutDashboard,
+  Code2,
+  Palette,
   type LucideIcon,
 } from "lucide-react";
 
@@ -53,4 +60,11 @@ export const featureIconMap: Record<string, LucideIcon> = {
   "bar-chart": BarChart3,
   "play-circle": PlayCircle,
   "message-circle-off": MessageCircleOff,
+  mail: Mail,
+  "message-circle": MessageCircle,
+  "map-pin": MapPin,
+  clock: Clock,
+  "layout-dashboard": LayoutDashboard,
+  "code-2": Code2,
+  palette: Palette,
 };

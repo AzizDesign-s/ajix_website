@@ -5,6 +5,10 @@ import { DesignPhilosophySection } from "@/components/sections/about/philosophy/
 import { SkillsSection } from "@/components/sections/about/skill/skills-section";
 import { DesignProcessSection } from "@/components/sections/about/process/design-process-section";
 import { BusinessImpactSection } from "@/components/sections/about/metrics/buisness-impact-section";
+import { IndustriesSection } from "@/components/sections/about/industry/industries-section";
+import { ToolsSection } from "@/components/sections/about/tools/tools-section";
+import { WhyHireSection } from "@/components/sections/about/why-hire/why-hire-section";
+import { LetsConnect } from "@/components/sections/home/cta/lets-connect";
 import {
   getProfile,
   getJourneyMilestones,
@@ -13,6 +17,11 @@ import {
   getSkillCategoryOrder,
   getProcessSteps,
   getBusinessMetrics,
+  getIndustries,
+  getToolsByCategory,
+  getToolCategoryOrder,
+  getWhyHireStatement,
+  getWhyHireFocusAreas,
 } from "@/lib/services/about-service";
 
 export const metadata: Metadata = {
@@ -29,6 +38,11 @@ export default function AboutPage() {
   const skillCategoryOrder = getSkillCategoryOrder();
   const processSteps = getProcessSteps();
   const businessMetrics = getBusinessMetrics();
+  const industries = getIndustries();
+  const toolsByCategory = getToolsByCategory();
+  const toolCategoryOrder = getToolCategoryOrder();
+  const whyHireStatement = getWhyHireStatement();
+  const whyHireFocusAreas = getWhyHireFocusAreas();
 
   return (
     <>
@@ -38,6 +52,26 @@ export default function AboutPage() {
       <SkillsSection skills={skills} categoryOrder={skillCategoryOrder} />
       <DesignProcessSection steps={processSteps} />
       <BusinessImpactSection metrics={businessMetrics} />
+      <IndustriesSection industries={industries} />
+      <ToolsSection
+        toolsByCategory={toolsByCategory}
+        categoryOrder={toolCategoryOrder}
+      />
+      <WhyHireSection
+        statement={whyHireStatement}
+        focusAreas={whyHireFocusAreas}
+      />
+      <LetsConnect
+        eyebrow="Ready When You Are"
+        title={
+          <>
+            Convinced yet?
+            <br />
+            Let&apos;s talk <span className="text-shimmer">opportunities.</span>
+          </>
+        }
+        description="Open to enterprise product design roles and select freelance engagements across the UAE and beyond."
+      />
     </>
   );
 }

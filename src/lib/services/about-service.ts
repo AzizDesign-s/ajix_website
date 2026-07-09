@@ -6,7 +6,8 @@ import type { Skill } from "@/types/about";
 import { processSteps } from "@/data/about/process";
 import { businessMetrics } from "@/data/about/metrics";
 import { industries } from "@/data/about/industries";
-import { aboutTools } from "@/data/about/tools";
+import { aboutTools, toolCategoryOrder } from "@/data/about/tools";
+import { whyHireStatement, whyHireFocusAreas } from "@/data/about/why-hire";
 import type { AboutTool } from "@/types/about";
 
 export function getProfile() {
@@ -60,4 +61,16 @@ export function getToolsByCategory(): Record<
     },
     {} as Record<AboutTool["category"], AboutTool[]>
   );
+}
+
+export function getToolCategoryOrder(): AboutTool["category"][] {
+  return toolCategoryOrder;
+}
+
+export function getWhyHireStatement() {
+  return whyHireStatement;
+}
+
+export function getWhyHireFocusAreas() {
+  return whyHireFocusAreas;
 }

@@ -286,6 +286,17 @@
   }
 }
 
+@keyframes ping-ring {
+  0% {
+    transform: scale(0.3);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
 .particle-mote {
   animation: particle-float var(--particle-duration, 8s) linear infinite;
   animation-delay: var(--particle-delay, 0s);

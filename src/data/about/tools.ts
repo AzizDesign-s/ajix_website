@@ -16,3 +16,10 @@ export const aboutTools: AboutTool[] = [
   { name: "Jira", category: "Collaboration", iconSlug: "jira" },
   { name: "Confluence", category: "Collaboration", iconSlug: "confluence" },
 ];
+
+export const toolCategoryOrder: AboutTool["category"][] = [
+  "Design",
+  "Development",
+  "Analytics",
+  "Collaboration",
+];
